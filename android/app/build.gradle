@@ -1,0 +1,101 @@
+plugins {
+    id "com.android.application"
+//    id "com.google.gms.google-services" // FlutterFire Configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    }
+
+
+
+android {
+    namespace "com.artist.primstage"
+    compileSdk flutter.compileSdkVersion // Replace flutter.compileSdkVersion with actual version number
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.artist.primstage"
+        minSdkVersion 24 // Replace flutter.minSdkVersion with actual version number
+        targetSdkVersion flutter.targetSdkVersion // Replace flutter.targetSdkVersion with actual version number
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("release-key.jks")  // Ensure this file is in android/app/
+            storePassword "primestage@4537"     // Your keystore password
+            keyAlias "release-key"          // The alias you used during keystore generation
+            keyPassword "primestage@4537"       // Your key password (same as store password if you used the same)
+        }
+    }
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now,
+            // so `flutter run --release` works.
+//                      signingConfig signingConfigs.debug
+                    signingConfig signingConfigs.release
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0" // Ensure the Kotlin stdlib dependency is using the correct version
+//     Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.1'
+
+    implementation 'com.google.android.gms:play-services-base:18.5.0'
+    implementation "com.google.firebase:firebase-messaging"
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth")
+//    implementation 'com.google.firebase:firebase-messaging:24.0.0' // Use the latest version
+//    implementation 'com.google.firebase:firebase-installations:18.0.0' // Use the latest version
+}

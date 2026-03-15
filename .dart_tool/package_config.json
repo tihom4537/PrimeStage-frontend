@@ -303,7 +303,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/tihom4537/fvm/versions/3.24.4/packages/flutter",
+      "rootUri": "file:///Users/tihom4537/Downloads/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -387,7 +387,7 @@
     },
     {
       "name": "flutter_localizations",
-      "rootUri": "file:///Users/tihom4537/fvm/versions/3.24.4/packages/flutter_localizations",
+      "rootUri": "file:///Users/tihom4537/Downloads/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -459,13 +459,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/tihom4537/fvm/versions/3.24.4/packages/flutter_test",
+      "rootUri": "file:///Users/tihom4537/Downloads/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/tihom4537/fvm/versions/3.24.4/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/tihom4537/Downloads/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -873,7 +873,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/tihom4537/fvm/versions/3.24.4/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/tihom4537/Downloads/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -1136,10 +1136,10 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2025-06-19T19:04:00.879608Z",
+  "generated": "2025-11-20T07:09:19.743262Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
-  "flutterRoot": "file:///Users/tihom4537/fvm/versions/3.24.4",
+  "flutterRoot": "file:///Users/tihom4537/Downloads/flutter",
   "flutterVersion": "3.24.4",
   "pubCache": "file:///Users/tihom4537/.pub-cache"
 }

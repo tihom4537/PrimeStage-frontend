@@ -145,6 +145,8 @@ class _ArtistCredentials2State extends State<ArtistCredentials2> with WidgetsBin
     };
   }
 
+
+
   final storage = FlutterSecureStorage();
 
   Future<String?> _getToken() async {
